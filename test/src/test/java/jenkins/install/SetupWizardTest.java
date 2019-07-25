@@ -116,9 +116,9 @@ public class SetupWizardTest {
     @Test
     public void shouldProhibitAccessToPluginListWithoutAuth() throws Exception {
         JenkinsRule.WebClient wc = j.createWebClient();
-        wc.assertFails("setupWizard/platformPluginList", 403);
-        wc.assertFails("setupWizard/createAdminUser", 403);
-        wc.assertFails("setupWizard/completeInstall", 403);
+        wc.assertFails("setupWizard/platformPluginList", 401);
+        wc.assertFails("setupWizard/createAdminUser", 401);
+        wc.assertFails("setupWizard/completeInstall", 401);
     }
 
     @Test
